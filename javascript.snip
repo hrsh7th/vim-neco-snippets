@@ -6,6 +6,12 @@ snippet proto
 snippet f
 	function () {${0}}
 
+snippet function
+	function ${1}(${2}) {
+	  ${0}
+	}
+
+
 snippet if
 	if (${1:true}) {${0}}
 
@@ -15,9 +21,12 @@ snippet ife
 snippet ifif
 	if (${1:true}) {${2}} else if (${3:true})  {${0}}
 
-snippet timeout
-	setTimeout(function() {${0}}${2:}, ${1:10});
+snippet sett
+	setTimeout(${0}, 0);
 
-snippet jqp
+snippet seti
+	var timer = setInterval(${0}, 0);
+
+snippet jqproxy
 	$.proxy(${0}, this)
 
