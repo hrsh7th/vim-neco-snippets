@@ -11,21 +11,30 @@ snippet function
 	  ${0}
 	}
 
-
 snippet if
-	if (${1:true}) {${0}}
+	if (${1}) {
+	  ${0}
+	}
 
 snippet ife
-	if (${1:true}) {${2}} else {${0}}
+	if (${1}) {
+	  ${2}
+	} else {
+	  ${0}
+	}
 
 snippet ifif
-	if (${1:true}) {${2}} else if (${3:true})  {${0}}
+	if (${1}) {
+	  ${2}
+	} else if (${3}) {
+	  ${0}
+	}
 
 snippet sett
 	setTimeout(${0}, 0);
 
 snippet seti
-	var timer = setInterval(${0}, 0);
+	setInterval(${0}, 0);
 
 snippet jqproxy
 	$.proxy(${0}, this)
