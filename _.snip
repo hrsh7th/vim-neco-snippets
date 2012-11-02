@@ -1,8 +1,25 @@
 # Global snippets
 
-snippet date
-	`strftime("%Y-%m-%d %H:%M:%S")`${0}
+snippet     date
+options     word
+    `strftime("%d %b %Y")`
 
-snippet fn
-	`expand('%:t:r')`${0}
+snippet     date_full
+alias       df
+options     word
+    `strftime("%Y-%m-%dT%H:%M:%S")`
 
+snippet     date_day
+alias       dd
+options     word
+    `strftime("%Y-%m-%d")`
+
+snippet     date_time
+alias       dt
+options     word
+    `strftime("%H:%M:%S")`
+
+snippet     file_name
+alias       fn
+options     word
+    `expand('%:t:r')`${0}

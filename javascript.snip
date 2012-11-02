@@ -1,41 +1,25 @@
+snippet function
+alias   func
+options word
+  function ${1:#:function_name}(${2}) {
+    ${0:TARGET}
+  }
+
 snippet proto
-	prototype.${1} = function (${2}) {
-	  ${0}
-	};
+options word
+  prototype.${2:#:method_name} = function (${3}) {
+    ${0:TARGET}
+  };
 
 snippet f
-	function (${1}) {${0}}
-
-snippet function
-	function ${1}() {
-	  ${0}
-	}
-
-snippet if
-	if (${1}) {
-	  ${0}
-	}
-
-snippet ife
-	if (${1}) {
-	  ${2}
-	} else {
-	  ${0}
-	}
-
-snippet ifif
-	if (${1}) {
-	  ${2}
-	} else if (${3}) {
-	  ${0}
-	}
+options word
+  function (${1}) {${0:TARGET}}
 
 snippet sett
-	setTimeout(${0}, 0);
-
-snippet seti
-	setInterval(${0}, 0);
+options head
+  setTimeout(${0:TARGET}, 10)
 
 snippet jqp
-	$.proxy(${0}, this)
+options head
+  $.proxy(${0:TARGET}, this)
 
