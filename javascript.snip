@@ -1,25 +1,45 @@
-snippet function
-alias   func
-options word
-  function ${1:#:function_name}(${2}) {
-    ${0:TARGET}
-  }
+snippet     function
+alias       func
+options     word
+    function ${1:#:function_name}(${2}) {
+      ${0:TARGET}
+    }
 
-snippet proto
-options word
-  prototype.${1:#:method_name} = function (${2}) {
-    ${0:TARGET}
-  };
+snippet     proto
+options     word
+    prototype.${1:#:method_name} = function (${2}) {
+      ${0:TARGET}
+    };
 
-snippet f
-options word
-  function (${1}) {${0:TARGET}}
+snippet     f
+options     word
+    function (${1}) {${0:TARGET}}
 
-snippet sett
-options word
-  setTimeout(${0:TARGET}, 10)
+snippet     sett
+options     word
+    setTimeout(${0:TARGET}, 10)
 
-snippet jqp
-options word
-  $.proxy(${0:TARGET}, this)
+snippet     jqp
+options     word
+    $.proxy(${0:TARGET}, this)
+
+snippet     if
+options     head
+    if (${1}) {
+      ${0:TARGET}
+    }
+
+snippet     for
+options     head
+    for (var i = 0, l = ${1:#:list}.length; i < l; i++) {
+      ${0:TARGET}
+    }
+
+snippet     forin
+options     head
+    for (var key in ${1:#:object}) {
+      if (${2:#:object}.hasOwnProperty(key)) {
+        ${0:TARGET}
+      }
+    }
 
