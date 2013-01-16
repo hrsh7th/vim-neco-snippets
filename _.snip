@@ -7,4 +7,5 @@ options     word
 snippet     fn
 alias       file_name
 options     word
-    `expand('%:t:r')`${0}
+    `bufname('%') =='[Command Line]' ? expand('#:t:r') : expand('%:t:r')`${0}
+
