@@ -7,5 +7,9 @@ options     word
 snippet     fn
 alias       file_name
 options     word
-    `bufname('%') =='[Command Line]' ? expand('#:t:r') : expand('%:t:r')`${0}
+    `substitute(bufname('%') =='[Command Line]' ? expand('#:t:r') : expand('%:t:r'), '\%(^\(.\)\|_\(.\)\)', '\u\1\u\2', 'g')`${0}
 
+snippet     fno
+alias       file_name_original
+options     word
+    `bufname('%') =='[Command Line]' ? expand('#:t:r') : expand('%:t:r')`${0}
