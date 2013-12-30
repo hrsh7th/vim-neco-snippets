@@ -2,14 +2,35 @@
 
 snippet     date
 options     word
+    `strftime("%d %b %Y")`
+
+snippet     date_full
+alias       df
+options     word
+    `strftime("%Y-%m-%dT%H:%M:%S")`
+
+snippet     date_day
+alias       dd
+options     word
     `strftime("%Y-%m-%d")`
 
-snippet     fn
-alias       file_name
+snippet     date_time
+alias       dt
 options     word
-    `substitute(bufname('%') =='[Command Line]' ? expand('#:t:r') : expand('%:t:r'), '\%(^\(.\)\|_\(.\)\)', '\u\1\u\2', 'g')`${0}
+    `strftime("%H:%M:%S")`
 
-snippet     fno
-alias       file_name_original
+snippet     lastmod
+abbr        Last modified time
+alias       lmod
+    Last Modified: `strftime("%Y-%m-%dT%H:%M:%S")`
+
+snippet     filename
+alias       fno
 options     word
-    `bufname('%') =='[Command Line]' ? expand('#:t:r') : expand('%:t:r')`${0}
+    `bufname('%') =='[Command Line]' ? expand('#:t:r:r:r') : expand('%:t:r:r:r')`${0}
+
+snippet     filename_upper_camel
+alias       fn
+options     word
+    `substitute(bufname('%') =='[Command Line]' ? expand('#:t:r:r:r') : expand('%:t:r:r:r'), '\%(^\(.\)\|_\(.\)\)', '\u\1\u\2', 'g')`${0}
+
